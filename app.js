@@ -24,7 +24,7 @@ const messages = [
 ];
 const links = [
   { href: "/", text: "Home" },
-  { href: "new", text: "New" },
+  { href: "/new", text: "New" },
 ];
 
 app.get("/", (req, res) => {
@@ -57,6 +57,19 @@ app.post("/new", (req, res) => {
 
   // Redirect back to the main page to display the updated messages
   res.redirect("/"); // Redirect to the home page
+});
+
+// message details page
+app.get("/messages/:id", (req, res) => {
+  const messageId = req.params.id;
+  console.log("Message ID:", messageId); // Log the ID to see what you're getting
+  const message = messages[messageId];
+
+  if (message) {
+    res.render("messageDetails", { message: message, links: links });
+  } else {
+    res.status(404).send("Message not found");
+  }
 });
 
 const PORT = process.env.PORT || 3000;

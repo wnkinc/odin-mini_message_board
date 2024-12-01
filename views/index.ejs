@@ -8,8 +8,9 @@
     <%- include('navbar', {links: links}) %>
     <h1><%= title %></h1>
     <ul>
-      <% messages.forEach((message) => { %>
+      <% messages.forEach((message, index) => { %>
       <li>
+        <a href="/messages/<%= index %>">Open</a>
         <strong><%= message.user %>:</strong> <%= message.text %>
         <br />
         <small>Added on: <%= message.added.toLocaleString() %></small>
