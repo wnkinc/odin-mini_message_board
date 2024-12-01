@@ -1,0 +1,24 @@
+{
+  "name": "odin-mini_message_board",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/wnkinc/odin-mini_message_board.git"
+  },
+  "author": "wes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wnkinc/odin-mini_message_board/issues"
+  },
+  "homepage": "https://github.com/wnkinc/odin-mini_message_board#readme",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.1",
+    "express-async-handler": "^1.2.0"
+  }
+}
