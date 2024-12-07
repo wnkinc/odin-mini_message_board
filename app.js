@@ -1,3 +1,5 @@
+require("dotenv").config(); // Load environment variables
+
 const express = require("express");
 const app = express();
 const messageRouter = require("./routes/messageRouter");

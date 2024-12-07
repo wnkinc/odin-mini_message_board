@@ -2,18 +2,16 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
-    <%- include('navbar', {links: links}) %>
+    <%- include('./partials/navbar', {links: links}) %>
     <h1><%= title %></h1>
     <ul>
-      <% messages.forEach((message, index) => { %>
+      <% messages.forEach((message) => { %>
       <li>
-        <a href="/messages/<%= index %>">Open</a>
-        <strong><%= message.user %>:</strong> <%= message.text %>
+        <strong><%= message.name %>:</strong> <%= message.message %>
         <br />
-        <small>Added on: <%= message.added.toLocaleString() %></small>
+        <small>Added on: <%= message.created_at.toLocaleString() %></small>
       </li>
       <% }); %>
     </ul>
