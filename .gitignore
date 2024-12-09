@@ -2,5 +2,5 @@
 .env
 
 # Other common files to ignore
-node_modules/
+node_modules
 
