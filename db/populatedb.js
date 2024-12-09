@@ -3,8 +3,8 @@
 require("dotenv").config(); // Load environment variables from .env file
 const { Client } = require("pg");
 
-// Use the connection string from the command-line argument or .env variable
-const dbUrl = process.argv[2] || process.env.DB_LOCAL_URL;
+// Use the appropriate connection string based on the environment
+const dbUrl = process.env.DATABASE_URL || process.env.DB_LOCAL_URL;
 
 const client = new Client({
   connectionString: dbUrl,

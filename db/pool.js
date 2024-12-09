@@ -1,7 +1,7 @@
 const { Pool } = require("pg");
 
 module.exports = new Pool({
-  connectionString: process.env.DB_LOCAL_URL,
+  connectionString: process.env.DATABASE_URL || process.env.DB_LOCAL_URL, // Use Railway URL if available
 });
 
 // const pool = new Pool({
