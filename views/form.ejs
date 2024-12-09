@@ -1,9 +1,9 @@
 <html>
   <head>
-    <title>New Message</title>
+    <title><%= title %></title>
   </head>
   <body>
-    <%- include('navbar', {links: links}) %>
+    <%- include('./partials/navbar', {links: links}) %>
     <h1>Add a New Message</h1>
     <form method="POST" action="/new">
       <label for="name">Name:</label>

@@ -14,6 +14,21 @@ async function messagesGET(req, res) {
   });
 }
 
+async function newMessageGET(req, res) {
+  res.render("form", {
+    title: "New Message",
+    links: links,
+  });
+}
+
+async function newMesagePOST(req, res) {
+  const { message, name } = req.body;
+  await db.insertMessage(message, name);
+  res.redirect("/");
+}
+
 module.exports = {
   messagesGET,
+  newMessageGET,
+  newMesagePOST,
 };
