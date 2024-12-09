@@ -21,7 +21,17 @@ async function newMessageGET(req, res) {
   });
 }
 
-async function newMesagePOST(req, res) {
+async function messageDetailsGET(req, res) {
+  const messageId = req.params.id;
+  const message = await db.getMessage(messageId);
+  res.render("messageDetails", {
+    title: "Message Details",
+    links: links,
+    message: message,
+  });
+}
+
+async function newMessagePOST(req, res) {
   const { message, name } = req.body;
   await db.insertMessage(message, name);
   res.redirect("/");
@@ -30,5 +40,6 @@ async function newMesagePOST(req, res) {
 module.exports = {
   messagesGET,
   newMessageGET,
-  newMesagePOST,
+  newMessagePOST,
+  messageDetailsGET,
 };

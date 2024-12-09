@@ -1,16 +1,16 @@
 <!-- messageDetails.ejs -->
 <html>
   <head>
-    <title>Message Details</title>
+    <title><%= title %></title>
     <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
-    <%- include('navbar', { links: links }) %>
-    <h1>Message Details</h1>
+    <%- include('./partials/navbar', {links: links}) %>
+    <h1><%= title %></h1>
     <div>
-      <strong><%= message.user %>:</strong> <%= message.text %>
+      <strong><%= message.name %>:</strong> <%= message.message %>
       <br />
-      <small>Added on: <%= message.added.toLocaleString() %></small>
+      <small>Added on: <%= message.created_at.toLocaleString() %></small>
     </div>
   </body>
 </html>

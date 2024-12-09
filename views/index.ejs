@@ -9,10 +9,12 @@
     <ul>
       <% messages.forEach((message) => { %>
       <li>
+        <a href="/<%= message.id %>/details">View</a>
         <strong><%= message.name %>:</strong> <%= message.message %>
         <br />
         <small>Added on: <%= message.created_at.toLocaleString() %></small>
       </li>
+      <br />
       <% }); %>
     </ul>
   </body>
